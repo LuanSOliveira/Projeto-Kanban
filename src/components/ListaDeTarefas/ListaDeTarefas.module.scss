@@ -11,3 +11,10 @@
         color: azure; 
     }
 }
+
+@media (max-width: 480px){
+    .lista{
+        display: block;
+        align-items: center;
+    }
+}

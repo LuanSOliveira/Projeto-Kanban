@@ -64,3 +64,10 @@
     border-radius: 15px;
     padding: 6px 6px 1px 6px;
 }
+
+@media (max-width: 480px){
+    .tarefa{
+        width: 200px;
+        margin: 0;
+    }
+}
