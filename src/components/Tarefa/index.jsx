@@ -18,6 +18,8 @@ const Tarefa = (props) => {
     function Avancar(){
         dispatch(avancaEstado(props.id))
     }
+
+    const tamanhoTela = window.innerWidth
     
     return(
         <div className={styles.tarefa}>
