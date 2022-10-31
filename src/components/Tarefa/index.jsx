@@ -1,6 +1,6 @@
 import styles from "./Tarefa.module.scss"
 import {TbTrashOff} from "react-icons/tb"
-import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa"
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight, FaArrowAltCircleUp, FaArrowAltCircleDown } from "react-icons/fa"
 import { useDispatch } from "react-redux"
 import { apagar, avancaEstado, retornaEstado } from "../../store/reducers/tarefas"
 
@@ -28,12 +28,12 @@ const Tarefa = (props) => {
                 <h4>{props.icone} {props.data}</h4>
                 <div className={styles.opcoes}>
                     {(props.estado === "novo") 
-                        ? <button className={styles.setaBloqueada} disabled><FaArrowAltCircleLeft/></button> 
-                        : <button className={styles.seta} onClick={Retornar}><FaArrowAltCircleLeft/></button>}
+                        ? <button className={styles.setaBloqueada} disabled>{(tamanhoTela <= 480) ? <FaArrowAltCircleUp/> : <FaArrowAltCircleLeft/>}</button> 
+                        : <button className={styles.seta} onClick={Retornar}>{(tamanhoTela <= 480) ? <FaArrowAltCircleUp/> : <FaArrowAltCircleLeft/>}</button>}
                     <button className={styles.excluir} onClick={Excluir}><TbTrashOff/></button>
                     {(props.estado === "concluido") 
-                        ? <button className={styles.setaBloqueada} disabled><FaArrowAltCircleRight/></button> 
-                        : <button className={styles.seta} onClick={Avancar}><FaArrowAltCircleRight/></button>}
+                        ? <button className={styles.setaBloqueada} disabled>{(tamanhoTela <= 480) ? <FaArrowAltCircleDown/> : <FaArrowAltCircleRight/>}</button> 
+                        : <button className={styles.seta} onClick={Avancar}>{(tamanhoTela <= 480) ? <FaArrowAltCircleDown/> : <FaArrowAltCircleRight/>}</button>}
                 </div>
             </div>
         </div>
